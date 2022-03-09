@@ -1,7 +1,12 @@
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+$mainColor: #7777bb;
+@import './node_modules/bootstrap/scss/bootstrap.scss';
 
-$bg-color: rgb(158, 154, 119);
+$bg-color: rgb(187, 202, 192);
 
 body {
-  background: $bg-color;
+  background: $mainColor;
+}
+
+img {
+  max-width: 1300px;
 }

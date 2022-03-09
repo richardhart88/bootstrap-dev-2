@@ -1,3 +1,6 @@
+//import 'bootstrap';
+import "../scss/styles.scss";
+
 // you can use app's unique identifier here
 const LOCAL_STORAGE_KEY = "toggle-bootstrap-theme";
 const LOCAL_META_DATA = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -12,12 +15,8 @@ if (isDark) {
 } else {
   disableDarkTheme();
 }
-/**
- * Apart from toggling themes, this will also store user's theme preference in local storage.
- * So when user visits next time, we can load the same theme.
- *
- */
- function toggleColor() {
+
+function toggleColor() {
   if (darkLink.getAttribute('href') === darkTheme) {
     disableDarkTheme()
   } else {
@@ -27,10 +26,21 @@ if (isDark) {
 
 function enableDarkTheme() {
   darkLink.setAttribute("href", darkTheme);
-  themeToggler.innerHTML = "🌙 Dark";
+  themeToggler.innerHTML = "Dark";
 }
 
 function disableDarkTheme() {
   darkLink.setAttribute("href", "");
-  themeToggler.innerHTML = "🌞 Light";
+  themeToggler.innerHTML = "Light";
 }
+
+//carousel
+$('.carousel').carousel();
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+
+$(function () {
+  $('[data-bs-toggle="tooltip"]').tooltip()
+})
